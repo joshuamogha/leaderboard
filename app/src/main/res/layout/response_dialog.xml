@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_margin="@dimen/layout_margin"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_height="match_parent">
+
+
+    <ImageView
+        android:src="@drawable/success"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="@dimen/project_txt_size"
+        android:layout_marginTop="@dimen/project_text_margin_bottom"
+        android:text="@string/confirm_text"
+        android:layout_width="100dp"
+        android:layout_height="100dp"/>
+
+
+    <TextView
+        android:textAllCaps="false"
+        android:text="@string/successfully_message"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="60dp"
+        android:padding="@dimen/et_padding"
+        android:id="@+id/response_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>

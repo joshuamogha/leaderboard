@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_margin="@dimen/layout_margin"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="@dimen/project_txt_size"
+        android:layout_marginTop="@dimen/project_text_margin_bottom"
+        android:text="@string/confirm_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+    <Button
+        android:textAllCaps="false"
+        android:text="@string/confirm_yes"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="60dp"
+        android:padding="@dimen/et_padding"
+        android:id="@+id/post_project_btn"
+        android:textColor="@color/btnTextColor"
+        android:background="@drawable/btn_shape"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>

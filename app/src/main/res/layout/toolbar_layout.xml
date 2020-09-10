@@ -1,0 +1,64 @@
+<androidx.appcompat.widget.Toolbar
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    android:background="?attr/colorPrimary"
+    app:layout_scrollFlags="scroll|enterAlways"
+    app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+
+
+<!--    <RelativeLayout-->
+<!--        android:layout_marginTop="@dimen/custom_tool_bar_margin"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content">-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/app_name_text"-->
+<!--            android:text="@string/app_name"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"/>-->
+
+
+<!--        <Button-->
+<!--            android:layout_toEndOf="@+id/app_name_text"-->
+<!--            android:text="@string/submit_project_txt_btn"-->
+<!--            android:id="@+id/submit_project_btn"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"/>-->
+
+<!--    </RelativeLayout>-->
+
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="9dp"
+            android:text="@string/app_name"
+            android:textAllCaps="true"
+            android:textColor="@color/white_color"
+            android:textSize="20sp" />
+
+        <Button
+            android:background="@drawable/corner"
+            android:id="@+id/submit_project_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:textAllCaps="false"
+            android:layout_marginTop="15dp"
+            android:textColor="@color/text_black"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="15dp"
+            android:text="@string/submit_project_txt_btn" />
+
+    </RelativeLayout>
+</androidx.appcompat.widget.Toolbar>

@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">LeaderBoard</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="submit_project_txt_btn">Submit</string>
+    <string name="hint_first_name">First Name</string>
+    <string name="hint_last_name">Last Name</string>
+    <string name="hint_email_address">Email Address</string>
+    <string name="hint_github_link">Project on GITHUB (link)</string>
+    <string name="project_submission_txt">Project Submission</string>
+    <string name="submit">Submit</string>
+    <string name="confirm_text">Are you sure?</string>
+    <string name="confirm_yes">Yes</string>
+    <string name="successfully_message">Successfully Message</string>
+</resources>
