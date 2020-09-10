@@ -11,5 +11,6 @@
     <string name="submit">Submit</string>
     <string name="confirm_text">Are you sure?</string>
     <string name="confirm_yes">Yes</string>
-    <string name="successfully_message">Successfully Message</string>
+    <string name="successfully_message">Submission Successful</string>
+    <string name="error_msg">Submission not Successful</string>
 </resources>

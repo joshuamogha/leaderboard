@@ -6,7 +6,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
+import android.widget.ProgressBar;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
@@ -31,6 +31,7 @@ public class SubmitProjectActivity extends AppCompatActivity {
     private EditText etEmailAddress, etFirstName, etLastName, etLinkToGithubProject;
     private String emailAddress, firstName, lastName, linkToGithubProject;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,20 +42,23 @@ public class SubmitProjectActivity extends AppCompatActivity {
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setDisplayShowTitleEnabled(false);
 
+
         etEmailAddress = findViewById(R.id.et_email_address);
         etFirstName = findViewById(R.id.et_first_name);
         etLastName = findViewById(R.id.et_last_name);
         etLinkToGithubProject = findViewById(R.id.et_github_link);
 
+
+        firstName = etFirstName.getText().toString().trim();
+        lastName = etLastName.getText().toString().trim();
+        emailAddress = etEmailAddress.getText().toString().trim();
+        linkToGithubProject = etLinkToGithubProject.getText().toString().trim();
+
         Button submitProjectBtn = findViewById(R.id.submit_project_btn);
         submitProjectBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               firstName=etFirstName.getText().toString().trim();
-               lastName=etLastName.getText().toString().trim();
-               emailAddress=etEmailAddress.getText().toString().trim();
-               linkToGithubProject=etLinkToGithubProject.getText().toString().trim();
-
+                confirmDialog();
 
             }
         });
@@ -63,33 +67,40 @@ public class SubmitProjectActivity extends AppCompatActivity {
 //        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
-    private void successDialog() {
+    private void confirmDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        View view = LayoutInflater.from(this).inflate(R.layout.success_dialog, null);
+        View view = LayoutInflater.from(this).inflate(R.layout.confirm_dialog, null);
         Button yesBtn = view.findViewById(R.id.post_project_btn);
-//        TextView messageTv=view.findViewById(R.id.message);
-//        messageTv.setText(message);
         builder.setView(view);
+
+        final AlertDialog alertDialog = builder.create();
+        alertDialog.show();
 
         yesBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                responseDialog("Message");
+                postProjectData(firstName, lastName, emailAddress, linkToGithubProject);
+
+                alertDialog.dismiss();
             }
         });
+
+
+    }
+
+    private void errorDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        View view = LayoutInflater.from(this).inflate(R.layout.error_dialog, null);
+        builder.setView(view);
 
         AlertDialog alertDialog = builder.create();
         alertDialog.show();
 
     }
 
-    private void responseDialog(String message) {
+    private void successDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        View view = LayoutInflater.from(this).inflate(R.layout.response_dialog, null);
-        TextView messageTv = view.findViewById(R.id.response_message);
-        messageTv.setText(message);
-//        TextView messageTv=view.findViewById(R.id.message);
-//        messageTv.setText(message);
+        View view = LayoutInflater.from(this).inflate(R.layout.success_dialog, null);
         builder.setView(view);
 
         AlertDialog alertDialog = builder.create();
@@ -111,14 +122,38 @@ public class SubmitProjectActivity extends AppCompatActivity {
 
 
     private void postProjectData(final String firstName, final String lastName, final String emailAddress, final String linkToGithubProject) {
-        StringRequest request = new StringRequest(Request.Method.POST, AppConfig.HOUR_URL, new Response.Listener<String>() {
+
+//
+//        if (firstName.isEmpty()) {
+//            etFirstName.setError("First name is required");
+//            return;
+//        } else if (lastName.isEmpty()) {
+//            etLastName.setError("Last name is required");
+//            return;
+//
+//
+//        } else if (emailAddress.isEmpty()) {
+//            etLastName.setError("Email Address is required");
+//            return;
+//
+//
+//        } else if (linkToGithubProject.isEmpty()) {
+//            etLastName.setError("Github Link Project is required");
+//            return;
+//
+//
+//        }
+
+        StringRequest request = new StringRequest(Request.Method.POST, AppConfig.POST_PROJECT_URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
+                successDialog();
 
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
+                errorDialog();
 
             }
         }) {

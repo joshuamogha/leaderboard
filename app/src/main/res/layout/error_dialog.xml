@@ -9,7 +9,7 @@
 
 
     <ImageView
-        android:src="@drawable/success"
+        android:src="@drawable/error"
         android:gravity="center"
         android:textStyle="bold"
         android:textSize="@dimen/project_txt_size"
@@ -21,11 +21,11 @@
 
     <TextView
         android:textAllCaps="false"
-        android:text="@string/successfully_message"
+        android:text="@string/error_msg"
         android:layout_marginTop="60dp"
         android:layout_marginBottom="60dp"
         android:padding="@dimen/et_padding"
-        android:id="@+id/response_message"
+        android:id="@+id/error_message"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
