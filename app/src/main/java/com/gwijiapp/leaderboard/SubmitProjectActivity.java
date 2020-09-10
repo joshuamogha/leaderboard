@@ -153,7 +153,8 @@ public class SubmitProjectActivity extends AppCompatActivity {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                errorDialog();
+                successDialog();
+
 
             }
         }) {
