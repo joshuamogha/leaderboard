@@ -4,8 +4,11 @@ Implementation of  mobile design of the GADS 2020 Leaderboard. The mobile App wi
 
 
 #Screenshots
-Home Screen
+Home Screen(Learning leaders
 
+![alt text](https://github.com/joshuamogha/leaderboard/blob/master/app/src/main/res/drawable/home.png)
+
+SkillIQ Leaders
 ![alt text](https://github.com/joshuamogha/leaderboard/blob/master/app/src/main/res/drawable/skill.png)
 
 
